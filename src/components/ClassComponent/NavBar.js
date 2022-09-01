@@ -1,3 +1,5 @@
+import './ClassComponent.css';
+
 const NavBar = () => {
     return (
         <div>
