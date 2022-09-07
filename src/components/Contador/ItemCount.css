@@ -1,0 +1,14 @@
+.Contador{
+    margin: 5px;
+    padding: 5px;
+    display: inline-block;
+    border: solid 3px;
+}
+
+.Contador text{
+    margin: 5px;
+}
+
+.Contador button{
+    margin: 5px;
+}

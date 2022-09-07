@@ -1,11 +1,13 @@
+import ItemCount from '../Contador/ItemCount'
 import './ItemListaContainer.css'
 
-const ItemListaContainer = (titulo, numero) => {
+const ItemListaContainer = (props) => {
     return (
         <div>
-            <ul>
-                <li>{titulo}</li>
-                <li>{numero}</li>
+            <ul className='lista'>
+                <li>{props.titulo}</li>
+                <li>{props.numero}</li>
+                <ItemCount/>
             </ul>
         </div>
     )
