@@ -8,7 +8,7 @@ function App() {
   return (
     <div className="App">
       <NavBar />
-      <ItemListaContainer titulo="pruebaProp" numero={300} />
+      <ItemListaContainer titulo="ENCABEZADO" numero={300} />
     </div>
   );
 }

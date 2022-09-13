@@ -1,16 +1,37 @@
-import ItemCount from '../Contador/ItemCount'
-import './ItemListaContainer.css'
+import ItemCount from "../Contador/ItemCount";
+import "./ItemListaContainer.css";
+import data from "../mockData";
+import { useEffect, useState } from "react";
+import ItemList from "../ItemList/ItemList";
+
+console.log(data)
+
 
 const ItemListaContainer = (props) => {
-    return (
-        <div>
-            <ul className='lista'>
-                <li>{props.titulo}</li>
-                <li>{props.numero}</li>
-                <ItemCount/>
-            </ul>
-        </div>
-    )
-}
+  const [productList, setProductList] = useState([]);
 
-export default ItemListaContainer
+  useEffect(() => {
+    getProducts.then((response) => {
+       setProductList(response) 
+    })
+  }, []);
+
+  const getProducts = new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve(data);
+    }, 2000);
+  });
+
+  return (
+    <div>
+      <ul className="lista">
+        <li>{props.titulo}</li>
+        <li>{props.numero}</li>
+        <ItemCount />
+        <ItemList lista={productList}/>
+      </ul>
+    </div>
+  );
+};
+
+export default ItemListaContainer;
