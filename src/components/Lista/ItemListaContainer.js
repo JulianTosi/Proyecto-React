@@ -4,8 +4,6 @@ import data from "../mockData";
 import { useEffect, useState } from "react";
 import ItemList from "../ItemList/ItemList";
 
-console.log(data)
-
 
 const ItemListaContainer = (props) => {
   const [productList, setProductList] = useState([]);
