@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import data from "../detailsData.js"
-import ItemDetail from "../ItemDetail";
+import ItemDetail from "../ItemDetail/ItemDetail"
 
 
 const ItemDetailContainer = () => {
