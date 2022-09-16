@@ -1,19 +1,37 @@
 import './App.css';
+import { BrowserRouter,Routes, Route } from 'react-router-dom';
 import NavBar from './components/NavBar/NavBar';
 import ItemListaContainer from './components/Lista/ItemListaContainer';
 import ItemDetailContainer from './components/listaDetail/ItemDetailContainer';
+import { Link } from 'react-router-dom'
 
 
 
 function App() {
   return (
-    <div className="App">
-      <NavBar />
-      <ItemListaContainer titulo="ENCABEZADO" numero={300} />
-      <hr/>
-      <ItemDetailContainer/>
-    </div>
+    <BrowserRouter>
+    <NavBar />
+    <Routes>
+      <Route path="/" element={
+      <div>
+        <h2>esto es el index</h2> 
+        <button><Link to={'/tecnologia'}>Tecnologia</Link></button>
+        <button><Link to={'/bebidas'}>Bebidas</Link></button>
+      </div>}/>
+      <Route path="bebidas" element={<ItemDetailContainer />}/>
+      <Route path="bebidas/:id" element={<div>estoy en detalle de bebidas</div>}/>
+      <Route path="tecnologia" element={<ItemListaContainer />}/>
+      <Route path="tecnologia/:id" element={<div>estoy en detalle de tecnologia</div>}/>
+    </Routes>
+    </BrowserRouter>
   );
 }
+
+/*<div className="App">
+<NavBar />
+<ItemListaContainer titulo="ENCABEZADO" numero={300} />
+<hr/>
+<ItemDetailContainer/>
+</div>*/
 
 export default App;

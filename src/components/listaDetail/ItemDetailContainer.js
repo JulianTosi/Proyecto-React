@@ -18,6 +18,7 @@ const ItemDetailContainer = () => {
     }, 2000);
   });
 
+  
   return (
     <div>
       <ul >
@@ -26,5 +27,8 @@ const ItemDetailContainer = () => {
     </div>
   );
 };
+//{data.map (el => (<ItemDetail key={data.id}/>))}
+
+
 
 export default ItemDetailContainer
