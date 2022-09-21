@@ -1,29 +1,26 @@
 import './ItemCount.css'
-import {useState} from 'react';
 
+function ItemCount({ setContador, contador }) {
+    const aumentar = () => {
+        setContador(contador + 1);
+    };
 
-const ItemCount = () => {
+    const disminuir = () => {
+        if (contador === 0) {
+            return;
+        }
+        setContador(contador - 1);
+    };
 
-    const [contador, setContador] = useState (0);
-    const stock = (20);
-
-    const aumentar = ( ) => {
-        setContador (contador + 1)
-    }
-
-    const disminuir = ( ) => {
-        setContador (contador - 1)
-    }
-
-  return (
-    <div className='Contador'>
-        <p>
-            Contador: { contador } 
-        </p>
-        <button onClick={aumentar} placeholder='Aumentar'>Aumentar</button>
-        <button onClick={disminuir} placeholder='Disminuir'>Disminuir</button>
-    </div>
-  );
-};
+    return (
+        <div className='Contador'>
+            <p>
+                contador:{contador}
+            </p>
+            <button onClick={aumentar}>Aumentar</button>
+            <button onClick={disminuir}>Disminuir</button>
+        </div>
+    );
+}
 
 export default ItemCount

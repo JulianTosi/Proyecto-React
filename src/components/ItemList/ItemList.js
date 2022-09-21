@@ -7,7 +7,7 @@ const ItemList = ({ lista }) => {
       {lista.map((product) => (
         <Link
         key={product.id}
-        to={'/tecnologia/' + product.id }
+        to={'/tecnologia/' + product.id}
         >
           <Item
             key={product.id}

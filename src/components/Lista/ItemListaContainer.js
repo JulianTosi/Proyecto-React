@@ -1,4 +1,3 @@
-import ItemCount from "../Contador/ItemCount";
 import "./ItemListaContainer.css";
 import data from "../mockData";
 import { useEffect, useState } from "react";
@@ -25,7 +24,6 @@ const ItemListaContainer = (props) => {
       <ul className="lista">
         <li>{props.titulo}</li>
         <li>{props.numero}</li>
-        <ItemCount />
         <ItemList lista={productList}/>
       </ul>
     </div>

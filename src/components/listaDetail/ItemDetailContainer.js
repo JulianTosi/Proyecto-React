@@ -18,16 +18,32 @@ const ItemDetailContainer = () => {
     }, 2000);
   });
 
+
+  const tieneAlcohol = data.filter(function(bebidas){
+    return bebidas.alcohol === 'false';
+  })
+
+
+  const filtroAlcohol = ()=>{
+    return tieneAlcohol
+  }
+
+  const filtroGaseosa = ()=>{
+    return 
+  }
   
   return (
     <div>
       <ul >
+        <button
+          onClick={() => filtroAlcohol}>Alcohol</button>
+        <button
+          onClick={() => filtroGaseosa}>Gaseosa</button>
         <ItemDetail lista={detailList}/>
       </ul>
     </div>
   );
 };
-//{data.map (el => (<ItemDetail key={data.id}/>))}
 
 
 

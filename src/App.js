@@ -8,14 +8,17 @@ import { Link } from 'react-router-dom'
 
 
 function App() {
+
+
   return (
     <BrowserRouter>
     <NavBar />
     <Routes>
       <Route path="/" element={
       <div>
-        <h2>esto es el index</h2> 
-        <button><Link to={'/tecnologia'}>Tecnologia</Link></button>
+        <ItemListaContainer />
+        <ItemDetailContainer />
+        <button><Link to={'/tecnologia/'}>Tecnologia</Link></button>
         <button><Link to={'/bebidas'}>Bebidas</Link></button>
       </div>}/>
       <Route path="bebidas" element={<ItemDetailContainer />}/>
@@ -27,11 +30,5 @@ function App() {
   );
 }
 
-/*<div className="App">
-<NavBar />
-<ItemListaContainer titulo="ENCABEZADO" numero={300} />
-<hr/>
-<ItemDetailContainer/>
-</div>*/
 
 export default App;
