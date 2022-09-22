@@ -19,17 +19,16 @@ const ItemDetailContainer = () => {
   });
 
 
-  const tieneAlcohol = data.filter(function(bebidas){
-    return bebidas.alcohol === 'false';
-  })
+  const tieneAlcohol = (data) => data.filter((bebida) => bebida.alcohol === 'true')
 
+  const sinAlcohol = (data) => data.filter((bebida) => bebida.alcohol !== 'true')
 
   const filtroAlcohol = ()=>{
     return tieneAlcohol
   }
 
   const filtroGaseosa = ()=>{
-    return 
+    return sinAlcohol
   }
   
   return (
