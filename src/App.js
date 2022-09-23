@@ -1,10 +1,10 @@
 import './App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import NavBar from './components/NavBar/NavBar';
-import ItemListaContainer from './components/Lista/ItemListaContainer';
-import ItemDetailContainer from './components/listaDetail/ItemDetailContainer';
 import { Link } from 'react-router-dom'
 import { CartProvider } from './context/cartProvider'
+import { ListaItemContainer } from './components/ListaItemsContainer/listaItemContainer'
+import { ItemDetailContainer } from './components/ListaDetailsContainer/listaDetailsContainer'
 
 
 
@@ -18,15 +18,10 @@ function App() {
         <Routes>
           <Route path="/" element={
             <div>
-              <ItemListaContainer />
-              <ItemDetailContainer />
-              <button><Link to={'/tecnologia/'}>Tecnologia</Link></button>
-              <button><Link to={'/bebidas'}>Bebidas</Link></button>
+              <ListaItemContainer/>
             </div>} />
-          <Route path="bebidas" element={<ItemDetailContainer />} />
-          <Route path="bebidas/:id" element={<div>estoy en detalle de bebidas</div>} />
-          <Route path="tecnologia" element={<ItemListaContainer />} />
-          <Route path="tecnologia/:id" element={<div>estoy en detalle de tecnologia</div>} />
+          <Route path="bebidas" element={<ListaItemContainer />} />
+          <Route path="bebidas/:id" element={<ItemDetailContainer/>} />
         </Routes>
       </BrowserRouter>
     </CartProvider>

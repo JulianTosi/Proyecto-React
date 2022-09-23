@@ -1,40 +1,22 @@
-import Item from "../Item/Item";
 import { Link } from 'react-router-dom'
 import ItemCount from "../Contador/ItemCount";
 import { useState } from 'react';
 
-const ItemDetail = ({ lista }) => {
-
+export const ItemDetail = ({ lista }) => {
+  
   const [contador, setContador] = useState(0);
 
-  const countClick = () => {
-
-  }
-
   return (
-    <div className="tarjetaProd">
-      {lista.map((product) => (
-        <>
-          <Link
-            key={product.id}
-            to={'/bebidas/' + product.id}
-          >Comprar!
-          </Link>
-          <Item
-            title={product.title}
-            price={product.price}
-            image={product.image}
-          />
-          <ItemCount setContador={setContador} contador={contador} />
-        </>
-      ))}
-      <Link
-        to={'/cart'}>
-        <button onClick={countClick} >Ir al carrito</button>
-      </Link>
+    <>
+    <img src={lista.image} alt={lista.title}/>
+    <h2>{lista.title}</h2>
+    <div>
+      <p>Contiene alcohol ?{lista.alcohol}</p>
+      <p>{lista.price}</p>
+      <ItemCount setContador={setContador} contador={contador} />
     </div>
+    </>
   );
-}
+};
 
-
-export default ItemDetail
+export default ItemDetail;

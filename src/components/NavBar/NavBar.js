@@ -12,9 +12,6 @@ const NavBar = () => {
                     <Link to={'/'}>Inicio</Link>
                     </li>
                     <li>
-                    <Link to={'/tecnologia'}>Tecnologia</Link>
-                    </li>
-                    <li>
                     <Link to={'/bebidas'}>Bebidas</Link>
                     </li>
                 </ul>

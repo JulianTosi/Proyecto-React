@@ -1,10 +1,10 @@
-import "./ItemListaContainer.css";
-import data from "../mockData";
+import data from '../detailsData'
 import { useEffect, useState } from "react";
-import ItemList from "../ItemList/ItemList";
+import ItemDetail from "../ItemDetail/ItemDetail";
+import './listaDetailsContainer.css'
 
 
-const ItemListaContainer = (props) => {
+export const ItemDetailContainer = (props) => {
   const [productList, setProductList] = useState([]);
 
   useEffect(() => {
@@ -24,10 +24,10 @@ const ItemListaContainer = (props) => {
       <ul className="lista">
         <li>{props.titulo}</li>
         <li>{props.numero}</li>
-        <ItemList lista={productList}/>
+        <ItemDetail lista={productList}/>
       </ul>
     </div>
   );
 };
 
-export default ItemListaContainer;
+export default ItemDetailContainer;

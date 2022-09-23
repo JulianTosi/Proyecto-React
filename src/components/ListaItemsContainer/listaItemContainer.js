@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import data from "../detailsData.js"
-import ItemDetail from "../ItemDetail/ItemDetail"
+import ItemList from "../ItemList/ItemList"
 
 
-const ItemDetailContainer = () => {
+export const ListaItemContainer = () => {
   const [detailList, setDetailList] = useState([]);
 
   useEffect(() => {
@@ -38,7 +38,7 @@ const ItemDetailContainer = () => {
           onClick={() => filtroAlcohol}>Alcohol</button>
         <button
           onClick={() => filtroGaseosa}>Gaseosa</button>
-        <ItemDetail lista={detailList}/>
+        <ItemList lista={detailList}/>
       </ul>
     </div>
   );
@@ -46,4 +46,4 @@ const ItemDetailContainer = () => {
 
 
 
-export default ItemDetailContainer
+export default ListaItemContainer
