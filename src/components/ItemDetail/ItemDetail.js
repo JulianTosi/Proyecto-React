@@ -7,8 +7,8 @@ export const ItemDetail = ({ productList }) => {
   const {addToCart} = useContext(CartContext);
   const [contador, setContador] = useState(1)
 
-  function onAdd(product) {
-    addToCart(product, contador)
+  function onAdd(productList) {
+    addToCart(productList, contador)
   }
 
 
@@ -22,7 +22,7 @@ export const ItemDetail = ({ productList }) => {
         <ItemCount stock={3} contador={contador} setContador={setContador}/>
       </div>
       <div>
-        <button onClick={()=> onAdd(product)} >
+        <button onClick={()=> onAdd(productList)} >
           Agregar al carrito
         </button>
       </div>
