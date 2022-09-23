@@ -1,20 +1,31 @@
 import { Link } from 'react-router-dom'
 import ItemCount from "../Contador/ItemCount";
-import { useState } from 'react';
+import { useState, useContext } from 'react';
+import { CartContext } from '../../context/cartContext';
 
-export const ItemDetail = ({ lista }) => {
-  
-  const [contador, setContador] = useState(0);
+export const ItemDetail = ({ productList }) => {
+  const {addToCart} = useContext(CartContext);
+  const [contador, setContador] = useState(1)
+
+  function onAdd(product) {
+    addToCart(product, contador)
+  }
+
 
   return (
     <>
-    <img src={lista.image} alt={lista.title}/>
-    <h2>{lista.title}</h2>
-    <div>
-      <p>Contiene alcohol ?{lista.alcohol}</p>
-      <p>{lista.price}</p>
-      <ItemCount setContador={setContador} contador={contador} />
-    </div>
+      <img src={productList.image} alt={productList.title} />
+      <h2>{productList.title}</h2>
+      <div>
+        <p>Contiene alcohol ?{productList.alcohol}</p>
+        <p>{productList.price}</p>
+        <ItemCount stock={3} contador={contador} setContador={setContador}/>
+      </div>
+      <div>
+        <button onClick={()=> onAdd(product)} >
+          Agregar al carrito
+        </button>
+      </div>
     </>
   );
 };

@@ -1,8 +1,6 @@
 import './ItemCount.css'
-import {useState} from 'react';
 
-function ItemCount({ stock, inicial, onAdd }) {
-    const [setContador, contador] = useState(inicial)
+function ItemCount({ stock, contador, setContador }) {
 
     const aumentar = () => {
         if (contador < stock) {
@@ -10,7 +8,7 @@ function ItemCount({ stock, inicial, onAdd }) {
         }
     };
     const disminuir = () => {
-        if (contador > inicial) {
+        if (contador > 0) {
             setContador(contador - 1);
         }
     };
@@ -22,12 +20,6 @@ function ItemCount({ stock, inicial, onAdd }) {
             <button onClick={aumentar}>Aumentar</button>
             <p> contador:{contador} </p>
             <button onClick={disminuir}>Disminuir</button>
-            </div>
-
-            <div>
-                <button onClick={() => onAdd(contador)}>
-                    Agregar al carrito
-                </button>
             </div>
 
         </div>

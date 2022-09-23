@@ -1,7 +1,7 @@
 import data from '../detailsData'
 import { useEffect, useState } from "react";
-import ItemDetail from "../ItemDetail/ItemDetail";
 import './listaDetailsContainer.css'
+import ItemDetail from '../ItemDetail/ItemDetail' 
 
 
 export const ItemDetailContainer = (props) => {
@@ -19,12 +19,13 @@ export const ItemDetailContainer = (props) => {
     }, 2000);
   });
 
+  console.log(ItemDetail)
+
   return (
     <div>
       <ul className="lista">
         <li>{props.titulo}</li>
         <li>{props.numero}</li>
-        <ItemDetail lista={productList}/>
       </ul>
     </div>
   );
