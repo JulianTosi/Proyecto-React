@@ -1,22 +1,22 @@
 import { useEffect, useState } from "react";
-import data from "../detailsData.js"
-import ItemList from "../ItemList/ItemList"
+import data from "../../components/detailsData.js"
+import ItemList from "../../components/ItemList/ItemList"
 
 
 export const ListaItemContainer = () => {
   const [detailList, setDetailList] = useState([]);
-
-  useEffect(() => {
-    getDetails.then((response) => {
-       setDetailList(response) 
-    })
-  }, []);
 
   const getDetails = new Promise((resolve, reject) => {
     setTimeout(() => {
       resolve(data);
     }, 2000);
   });
+
+  useEffect(() => {
+    getDetails.then((response) => {
+       setDetailList(response) 
+    })
+  }, []);
 
 
   const tieneAlcohol = (data) => data.filter((bebida) => bebida.alcohol === 'true')

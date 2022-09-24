@@ -11,9 +11,9 @@ export const ItemDetail = ({ productList }) => {
     addToCart(productList, contador)
   }
 
-
   return (
     <>
+    <Link to='/'>Volver</Link>
       <img src={productList.image} alt={productList.title} />
       <h2>{productList.title}</h2>
       <div>

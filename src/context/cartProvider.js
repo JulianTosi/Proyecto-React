@@ -1,5 +1,5 @@
 import {useState} from 'react';
-import { CartContext } from './cartContext';
+import { CartContext } from '../context/cartContext';
 
 export const CartProvider = ({ children }) => {
     const [cart , setCart] = useState([]);
@@ -14,6 +14,14 @@ export const CartProvider = ({ children }) => {
     const isInCart = (id) => {
         return cart.some ((item) => item.id === id);
     };
+    const clear  = () => {
+        setCart([]);
+    }
+
+    const removeItem = (id) => {
+
+    }
+
     return ( 
         <CartContext.Provider value={{ cart, addToCart}}>
             {children}

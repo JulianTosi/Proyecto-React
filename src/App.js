@@ -1,10 +1,10 @@
 import './App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import NavBar from './components/NavBar/NavBar';
+import  NavBar  from './components/NavBar/NavBar';
 import { Link } from 'react-router-dom'
 import { CartProvider } from './context/cartProvider'
-import { ListaItemContainer } from './components/ListaItemsContainer/listaItemContainer'
-import { ItemDetailContainer } from './components/ListaDetailsContainer/listaDetailsContainer'
+import { ListaItemContainer } from './pages/ListaItemsContainer/listaItemContainer'
+import { ItemDetailContainer } from './pages/ListaDetailsContainer/listaDetailsContainer'
 
 
 

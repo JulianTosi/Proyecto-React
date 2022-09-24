@@ -1,17 +1,19 @@
-import data from '../detailsData'
+import data from '../../components/detailsData'
 import { useEffect, useState } from "react";
 import './listaDetailsContainer.css'
-import ItemDetail from '../ItemDetail/ItemDetail' 
+import ItemDetail from '../../components/ItemDetail/ItemDetail' 
+import { useParams } from 'react-router-dom';
 
 
 export const ItemDetailContainer = (props) => {
+  const { id } = useParams();
   const [productList, setProductList] = useState([]);
 
   useEffect(() => {
     getProducts.then((response) => {
        setProductList(response) 
     })
-  }, []);
+  }, [id]);
 
   const getProducts = new Promise((resolve, reject) => {
     setTimeout(() => {
@@ -19,14 +21,10 @@ export const ItemDetailContainer = (props) => {
     }, 2000);
   });
 
-  console.log(ItemDetail)
 
   return (
     <div>
-      <ul className="lista">
-        <li>{props.titulo}</li>
-        <li>{props.numero}</li>
-      </ul>
+      {productList && <ItemDetail productList={productList}/>}
     </div>
   );
 };
