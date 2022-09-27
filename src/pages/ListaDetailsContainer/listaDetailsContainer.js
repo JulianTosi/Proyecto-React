@@ -20,8 +20,7 @@ export const ItemDetailContainer = (props) => {
       resolve(data);
     }, 2000);
   });
-
-
+  
   return (
     <div>
       {productList && <ItemDetail productList={productList}/>}
