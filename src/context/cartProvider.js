@@ -19,6 +19,13 @@ export const CartProvider = ({ children }) => {
     }
 
     const removeItem = (id) => {
+        let nuevaLista = [];
+        cart.forEach((product) => {
+            if (product.id !== id) {
+                nuevaLista.push(product)
+            }
+        });
+        setCart(nuevaLista)
 
     }
 

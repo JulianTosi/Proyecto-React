@@ -3,9 +3,6 @@ import { Link } from 'react-router-dom'
 
 const ItemList = ({ lista }) => {
 
-  const countClick = () => {
-
-  }
 
   return (
     <div className="tarjetaProd">
@@ -23,10 +20,6 @@ const ItemList = ({ lista }) => {
           />
         </>
       ))}
-      <Link
-        to={'/cart'}>
-        <button onClick={countClick} >Ir al carrito</button>
-      </Link>
     </div>
   );
 }

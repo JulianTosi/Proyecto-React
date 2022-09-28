@@ -1,10 +1,15 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import data from "../../components/detailsData.js"
 import ItemList from "../../components/ItemList/ItemList"
 
 
 export const ListaItemContainer = () => {
   const [detailList, setDetailList] = useState([]);
+
+  const countClick = () => {
+
+  }
 
   const getDetails = new Promise((resolve, reject) => {
     setTimeout(() => {
@@ -40,6 +45,10 @@ export const ListaItemContainer = () => {
           onClick={() => filtroGaseosa}>Gaseosa</button>
         <ItemList lista={detailList}/>
       </ul>
+      <Link
+        to={'/carrito'}>
+        <button onClick={countClick} >Ir al carrito</button>
+      </Link>
     </div>
   );
 };
