@@ -4,6 +4,7 @@ import { useState, useContext } from 'react';
 import { CartContext } from '../../context/cartContext';
 import Detail from '../Detail/Detail';
 
+
 export const ItemDetail = ({ productList }) => {
   const { addToCart } = useContext(CartContext);
   const [contador, setContador] = useState(1)

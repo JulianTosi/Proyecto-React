@@ -12,7 +12,10 @@ const NavBar = () => {
                     <Link to={'/'}>Inicio</Link>
                     </li>
                     <li>
-                    <Link to={'/bebidas'}>Bebidas</Link>
+                    <Link to={'categoria/gaseosa'}>Gaseosa</Link>
+                    </li>
+                    <li>
+                    <Link to={'categoria/alcohol'}>Alcohol</Link>
                     </li>
                 </ul>
             </div>
